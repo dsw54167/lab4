@@ -16,7 +16,9 @@ show_help(){
   echo -e "\n"
   echo -e "--date / -d displays date \n"
   echo -e "--logs / -l [N] creates N logs file (default 100) \n"
+  echo -e "--errors / -e [N] create N error files in numerated error directories\n"
   echo -e "--help / -h displays options \n"
+}
 }
 
 init(){
