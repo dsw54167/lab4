@@ -23,9 +23,17 @@ init(){
   repo_url="https://github.com/dsw54167/lab4.git"
   git clone "$repo_url" repo
   export PATH=$(pwd):$PATH
-	echo $PATH
 }
 
+
+create_errors(){
+  local -i max=${1:-100}
+  for i in $(seq 1 $max);
+  do
+    mkdir -p "error${i}"
+    echo "error${i}.txt $0 $(date)" > "error${i}/error${i}.txt"
+  done
+}
 
 
 case "$1" in
@@ -42,6 +50,14 @@ case "$1" in
   ;;
   --init)
     init
+  ;;
+  --errors|-e)
+    if [ ! -z $2 ];
+    then
+      create_errors $2
+    else
+      create_errors
+    fi
   ;;
   --help| -h)
     show_help
