@@ -19,6 +19,14 @@ show_help(){
   echo -e "--help displays options \n"
 }
 
+init(){
+  repo_url="https://github.com/dsw54167/lab4.git"
+  git clone "$repo_url" repo
+  export PATH=$(pwd):$PATH
+	echo $PATH
+}
+
+
 
 case "$1" in
   --date| -d)
@@ -31,7 +39,10 @@ case "$1" in
     else
       create_logs
     fi
-      ;;
+  ;;
+  --init)
+    init
+  ;;
   --help| -h)
     show_help
   ;;
