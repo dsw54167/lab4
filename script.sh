@@ -12,6 +12,14 @@ create_logs(){
   done
 }
 
+show_help(){
+  echo -e "\n"
+  echo -e "--date displays date \n"
+  echo -e "--logs [N] creates N logs file (default 100) \n"
+  echo -e "--help displays options \n"
+}
+
+
 case "$1" in
   --date)
     show_date
@@ -24,4 +32,7 @@ case "$1" in
       create_logs
     fi
       ;;
+  --help)
+    show_help
+  ;;
 esac
