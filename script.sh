@@ -14,9 +14,9 @@ create_logs(){
 
 show_help(){
   echo -e "\n"
-  echo -e "--date displays date \n"
-  echo -e "--logs [N] creates N logs file (default 100) \n"
-  echo -e "--help displays options \n"
+  echo -e "--date / -d displays date \n"
+  echo -e "--logs / -l [N] creates N logs file (default 100) \n"
+  echo -e "--help / -h displays options \n"
 }
 
 init(){
