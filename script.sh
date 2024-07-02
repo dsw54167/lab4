@@ -21,10 +21,10 @@ show_help(){
 
 
 case "$1" in
-  --date)
+  --date| -d)
     show_date
   ;;
-  --logs)
+  --logs| -l)
     if [ ! -z $2 ];
     then
       create_logs $2
@@ -32,7 +32,7 @@ case "$1" in
       create_logs
     fi
       ;;
-  --help)
+  --help| -h)
     show_help
   ;;
 esac
